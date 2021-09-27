@@ -65,6 +65,7 @@ public class DialogueSystem : MonoBehaviour
         colorElements = new Image[] {container.GetComponent<Image>(), contineBG };
 
         HideDialogueBox();
+        LoadDialogue("tutorial_1");
     }
 
     /// <summary>
@@ -115,14 +116,19 @@ public class DialogueSystem : MonoBehaviour
             LoadDialogue("computer_hello");
         }
 
+        if (Input.GetMouseButtonDown(2))
+        {
+            LoadDialogue("tutorial_1");
+        }
+
         if (Input.GetMouseButtonDown(3))
         {
-            ShowDebug($"Kitten is cute");
+            ShowDebug($"This is a debug message. Bla Bla Bla stop breaking everything please.");
         }
 
         if (Input.GetMouseButtonDown(4))
         {
-            ShowDebug(new string[] { "Kitten is actually gay", "She likes to come here and look at the boxy box swaying around.", "There is no helping her :P"});
+            LoadDialogue("kitten");
         }
 
         // progress dialogue
